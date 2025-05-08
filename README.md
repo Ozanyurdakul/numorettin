@@ -1,157 +1,133 @@
-1. KADER SAYISI (Life Path Number)
-Girdi: Doğum tarihi (gün.ay.yıl)
-
-İşlem: Gün + Ay + Yıl → Tek haneli ya da özel sayılar (11, 22, 33)
-
-Çıktı:
-
-Sayısal değer
-
-Yorumu (lider, hizmetkar, oyuncu vs.)
-
-Tipoloji (PDF’teki 1–9, 11, 22, 19 açıklamaları)
-
-2. RUH GÜDÜSÜ (Soul Urge Number)
-Girdi: İsimdeki sesli harfler
-
-İşlem: Sesli harflerin sayısal karşılığı → toplam
-
-Çıktı:
-
-Ruh güdüsü sayısı
-
-Tipoloji tanımı (1–9, 11, 19, 22 açıklamaları)
-
-3. KİŞİLİK SAYISI (Personality Number)
-Girdi: İsimdeki sessiz harfler
-
-İşlem: Sessiz harflerin sayısal karşılığı → toplam
-
-Çıktı:
-
-Kişilik sayısı
-
-Tanım ve etkileri
-
-4. İSİM ANALİZİ VE MESLEK YATKINLIĞI (Yan Kulvar)
-Girdi: Tam isim (kızlık soyadı dahil)
-
-İşlem: Harf değerleriyle toplam → mesleki enerji alanı
-
-Çıktı:
-
-Sayı
-
-Meslekler (PDF’teki 1–9 açıklamalarıyla)
-
-5. ÇAKRA ANALİZİ
-Girdi: İsimden ve doğumdan gelen sayıların çakralara etkisi
-
-İşlem: Her sayı belirli bir çakrayı etkiler
-
-Çıktı:
-
-Açık/Kapalı çakralar
-
-Her çakranın dengedeki ve dengesiz hali
-
-Şifalandırıcı olumlamalar (PDF’te mevcut)
-
-6. KARMA SAYILARI (Karmik Dersler)
-Girdi: Doğum tarihi ve isimde eksik harfler
-
-İşlem: Belirli sayılar (13, 14, 16, 19) → Karmik yükler
-
-Çıktı:
-
-Karmik ders sayısı
-
-Anlamı ve çözüm önerisi
-
-7. AURA RENGİ
-Girdi: Kader + Ruh + Kişilik sayısı kombinasyonu
-
-İşlem: Sayı frekansına göre aura yansıması
-
-Çıktı:
-
-Renk
-
-Ruhsal açıklama
-
-8. PIN KODU (Spiritüel Kilit Sayı)
-Girdi: Doğum günü + isimden gelen sayılar
-
-İşlem: Sabit yapı (örnekle verilir)
-
-Çıktı:
-
-4 haneli sayı
-
-Gizli motivasyon
-
-9. YAŞAM AMACI (Life Purpose)
-Girdi: Kader sayısı + Ruh sayısı
-
-İşlem: Kombinasyonla belirlenir
-
-Çıktı:
-
-Sayısal ve yorum olarak yaşam amacı
-
-10. EVRENSEL YIL / KİŞİSEL YIL
-Girdi: Şu anki yıl + doğum günü
-
-İşlem: Yıl + Ay + Gün
-
-Çıktı:
-
-Evrensel yıl: herkes için ortak etki
-
-Kişisel yıl: bireysel gelişim evresi (1–9 döngüsü)
-
-11. İLİŞKİ ANALİZİ (Partner Uyumu)
-Girdi: İki kişinin doğum tarihleri ve isimleri
-
-İşlem: Sayıların çakışma/uyum analizi
-
-Çıktı:
-
-Uyum oranı (%)
-
-Çift için potansiyel çatışma ve uyum noktaları
-
-12. ESMA ANALİZİ (İsimlerin İlahi İsimlerle Uyumu)
-Girdi: Harflerin sayısal değeri
-
-İşlem: Sayılara denk gelen Esma’lar ile eşleştirme
-
-Çıktı:
-
-İlgili Esma
-
-Anlamı ve etkisi (örneğin El-Basir: Sezgi yüksekliği)
-
-13. AÇIK / KAPALI ÇAKRA HARİTASI
-Girdi: İsim + doğum tarihinden çıkan enerjiler
-
-İşlem: Her sayı belirli çakrayı temsil eder
-
-Çıktı:
-
-Açık/kapalı listesi
-
-Uyarılar ve önerilen şifalandırmalar
-| Sayı | Harfler                            |
-| ---- | ---------------------------------- |
-| 1    | A, I, J, S, **İ**                  |
-| 2    | B, K, T                            |
-| 3    | C, L, U, **Ç, Ü**                  |
-| 4    | D, M, V                            |
-| 5    | E, N, W                            |
-| 6    | F, O, X, **Ö**                     |
-| 7    | G, P, Y, **Ğ**                     |
-| 8    | H, Q, Z                            |
-| 9    | R,                                 |
-| –    | **Ş** → genelde **S** yerine konur |
-
+def pisagor_tablosu():
+    return {
+        'A':1, 'B':2, 'C':3, 'Ç':3, 'D':4, 'E':5, 'F':8,
+        'G':3, 'Ğ':3, 'H':5, 'I':1, 'İ':1, 'J':1, 'K':2,
+        'L':3, 'M':4, 'N':5, 'O':7, 'Ö':7, 'P':8, 'R':9,
+        'S':1, 'Ş':1, 'T':2, 'U':3, 'Ü':3, 'V':4, 'Y':7, 'Z':8
+    }
+
+def sayiya_cevir(metin):
+    tablo = pisagor_tablosu()
+    return [tablo[harf] for harf in metin.upper() if harf in tablo]
+
+def basamaklara_ayir(sayi):
+    while sayi > 9 and sayi not in [11, 22, 33]:
+        sayi = sum(int(d) for d in str(sayi))
+    return sayi
+
+def isim_sayisi(isim_tam):
+    sayilar = sayiya_cevir(isim_tam.replace(" ", ""))
+    return basamaklara_ayir(sum(sayilar))
+
+def ruh_sayisi(isim_tam):
+    unlu_harfler = 'AEIİOÖUÜ'
+    sayilar = sayiya_cevir(''.join(h for h in isim_tam.upper() if h in unlu_harfler))
+    return basamaklara_ayir(sum(sayilar))
+
+def kisilik_sayisi(isim_tam):
+    sessiz_harfler = 'BCÇDFGĞHJKLMNPRSŞTVYZ'
+    sayilar = sayiya_cevir(''.join(h for h in isim_tam.upper() if h in sessiz_harfler))
+    return basamaklara_ayir(sum(sayilar))
+
+def kader_sayisi(dogum_tarihi):
+    sayilar = [int(c) for c in dogum_tarihi if c.isdigit()]
+    return basamaklara_ayir(sum(sayilar))
+
+def cakra_detay(cakra_no):
+    cakralar = {
+        1: {
+            "ad": "1. Kök Çakra (Muladhara)",
+            "renk": "Kırmızı",
+            "duygu": "Kabul, güven, aidiyet",
+            "element": "Toprak",
+            "organlar": "Omurga, bacaklar, ayaklar, kalın bağırsak",
+            "sorunlar": "Korku, güvensizlik, kabızlık, öfke, şiddet",
+            "ifade": "İstiyorum"
+        },
+        2: {
+            "ad": "2. Sakral Çakra (Svadhisthana)",
+            "renk": "Turuncu",
+            "duygu": "Yaratıcılık, zevk, değişim",
+            "element": "Su",
+            "organlar": "Üreme organları, böbrekler, mesane",
+            "sorunlar": "Utanç, suçluluk, bastırılmış cinsellik",
+            "ifade": "Arzuluyorum"
+        },
+        3: {
+            "ad": "3. Solar Pleksus Çakrası (Manipura)",
+            "renk": "Sarı",
+            "duygu": "Özgüven, irade, kişisel güç",
+            "element": "Ateş",
+            "organlar": "Mide, karaciğer, pankreas",
+            "sorunlar": "Öfke, değersizlik hissi, kontrol saplantısı",
+            "ifade": "Hareket etmek istiyorum"
+        },
+        4: {
+            "ad": "4. Kalp Çakrası (Anahata)",
+            "renk": "Yeşil",
+            "duygu": "Sevgi, empati, bağışlama",
+            "element": "Hava",
+            "organlar": "Kalp, akciğer, göğüs",
+            "sorunlar": "Kıskançlık, yalnızlık, kalp rahatsızlıkları",
+            "ifade": "Sevmek ve sevilmek istiyorum"
+        },
+        5: {
+            "ad": "5. Boğaz Çakrası (Vishuddha)",
+            "renk": "Mavi",
+            "duygu": "İfade, dürüstlük, iletişim",
+            "element": "Eter",
+            "organlar": "Boğaz, tiroit, ses telleri",
+            "sorunlar": "İfade edememe, boğaz rahatsızlıkları",
+            "ifade": "Özgürce konuşmak istiyorum"
+        },
+        6: {
+            "ad": "6. Üçüncü Göz Çakrası (Ajna)",
+            "renk": "İndigo",
+            "duygu": "Sezgi, içgörü, bilgelik",
+            "element": "Işık",
+            "organlar": "Gözler, alın, beyin",
+            "sorunlar": "Kafa karışıklığı, baş ağrısı, hayal kuramama",
+            "ifade": "Görmek istiyorum"
+        },
+        7: {
+            "ad": "7. Taç Çakra (Sahasrara)",
+            "renk": "Mor",
+            "duygu": "Spiritüellik, birlik bilinci",
+            "element": "Kozmik Enerji",
+            "organlar": "Beyin, sinir sistemi",
+            "sorunlar": "Anlam eksikliği, bağlantısızlık, depresyon",
+            "ifade": "Olmak istiyorum"
+        }
+    }
+    return cakralar.get(cakra_no, {})
+
+def cakra_analizi_detayli(isim_sayi, ruh_sayi, kader_sayi):
+    cakra_kod = (isim_sayi + ruh_sayi + kader_sayi) % 7
+    cakra_kod = 7 if cakra_kod == 0 else cakra_kod
+    return cakra_detay(cakra_kod)
+
+def analiz_et():
+    isim = input("İsim (varsa ikinci isim dahil): ")
+    soyisim = input("Soyisim: ")
+    dogum_tarihi = input("Doğum tarihi (GG.AA.YYYY): ")
+
+    tam_ad = f"{isim} {soyisim}"
+    i_sayi = isim_sayisi(tam_ad)
+    r_sayi = ruh_sayisi(tam_ad)
+    k_sayi = kisilik_sayisi(tam_ad)
+    kader = kader_sayisi(dogum_tarihi)
+
+    cakra = cakra_analizi_detayli(i_sayi, r_sayi, kader)
+
+    print("\n--- NUMEROLOJİ ANALİZİ ---")
+    print(f"İsim Sayısı: {i_sayi}")
+    print(f"Ruh Sayısı: {r_sayi}")
+    print(f"Kişilik Sayısı: {k_sayi}")
+    print(f"Kader Sayısı: {kader}")
+
+    print("\n🌀 ÇAKRA ANALİZİ 🌀")
+    for k, v in cakra.items():
+        print(f"{k}: {v}")
+
+if __name__ == "__main__":
+    analiz_et()
