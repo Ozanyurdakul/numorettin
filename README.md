@@ -142,3 +142,16 @@ Girdi: İsim + doğum tarihinden çıkan enerjiler
 Açık/kapalı listesi
 
 Uyarılar ve önerilen şifalandırmalar
+| Sayı | Harfler                            |
+| ---- | ---------------------------------- |
+| 1    | A, I, J, S, **İ**                  |
+| 2    | B, K, T                            |
+| 3    | C, L, U, **Ç, Ü**                  |
+| 4    | D, M, V                            |
+| 5    | E, N, W                            |
+| 6    | F, O, X, **Ö**                     |
+| 7    | G, P, Y, **Ğ**                     |
+| 8    | H, Q, Z                            |
+| 9    | R,                                 |
+| –    | **Ş** → genelde **S** yerine konur |
+
